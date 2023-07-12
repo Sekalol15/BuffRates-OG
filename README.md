@@ -1,6 +1,6 @@
 # BuffRates-OG
 
-Buffs various mob spawn and drop rates.
+Buffs various mob spawn and drop rates.(doesn‘t work)
 
 Gradle Version: 8.1.1
 
