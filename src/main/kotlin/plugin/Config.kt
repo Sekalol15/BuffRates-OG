@@ -5,7 +5,7 @@ package plugin
 import org.bukkit.configuration.file.FileConfiguration
 import java.io.File
 
-
+//config, not fully implemented
 object Config {
         private lateinit var config: FileConfiguration
         private lateinit var file: File
