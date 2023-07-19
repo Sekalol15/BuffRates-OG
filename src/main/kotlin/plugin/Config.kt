@@ -35,4 +35,12 @@ object Config {
     fun getRaiderQuantity() : Int {
         return config.get("raiderQuantity") as Int
     }
+
+    fun getZombieIronEnabled(): Boolean {
+        return config.get("zombieIronEnabled") as Boolean
+    }
+
+    fun getZombieIron(): Double {
+        return config.get("zombieIron") as Double
+    }
 }

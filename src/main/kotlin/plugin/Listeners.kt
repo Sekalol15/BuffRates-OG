@@ -2,22 +2,26 @@
 // Author: Sekalol15
 package plugin
 
+import org.bukkit.Material
 import org.bukkit.entity.EntityType
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.entity.CreatureSpawnEvent
-import org.bukkit.event.raid.RaidSpawnWaveEvent
+import org.bukkit.event.entity.EntityDeathEvent
+import org.bukkit.inventory.ItemStack
+
 import kotlin.random.Random
 
 class Listeners : Listener {
     @EventHandler
     fun CreatureSpawnEvent(event: CreatureSpawnEvent) {
-        var SlimeChanceEnabled = Config.getSlimeChanceEnabled()
-        var SlimeChance = Config.getSlimeChance()
-        var raiderQuantity = Config.getRaiderQuantity()
 
-        var entityPos = event.entity.location
-        var entityType = event.getEntityType()
+        val SlimeChanceEnabled = Config.getSlimeChanceEnabled()
+        val SlimeChance = Config.getSlimeChance()
+        val raiderQuantity = Config.getRaiderQuantity()
+
+        val entityPos = event.entity.location
+        val entityType = event.getEntityType()
 
 
         //check the conditions and spawn the slime if correct
@@ -38,10 +42,23 @@ class Listeners : Listener {
             }
         }
     }
+    @EventHandler
+    fun EntityDeathEvent(event: EntityDeathEvent) {
+
+        val zombieIronEnabled = Config.getZombieIronEnabled()
+        val zombieIron = Config.getZombieIron()
+
+        if (event.entityType == EntityType.ZOMBIE && Random.nextDouble() <= zombieIron && zombieIronEnabled == true) {
+            val entityPos = event.entity.location
+            val iron = ItemStack(Material.IRON_INGOT)
+            event.entity.world.dropItemNaturally(entityPos, iron)
 
 
 
         }
+
+    }
+}
 
 
 
