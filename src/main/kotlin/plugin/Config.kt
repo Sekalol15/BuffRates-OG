@@ -25,7 +25,14 @@ object Config {
     }
 
 
+    fun getSlimeChanceEnabled() : Boolean {
+        return config.get("slimeChanceEnabled") as Boolean
+    }
     fun getSlimeChance(): Double {
         return config.get("slimeChance") as Double
+    }
+
+    fun getRaiderQuantity() : Int {
+        return config.get("raiderQuantity") as Int
     }
 }

@@ -1,1 +1,9 @@
+#slime buff config, slimeChance is the chance for a slime to spawn everytime something spawns
+#slimeChanceEnabled needs to be true
+#default: 0.1
+slimeChanceEnabled : true
 slimeChance : 0.1
+
+#quantity of raiders to be added to the raid, default adds 1 raider of the same type per existing raider
+
+raiderQuantity : 1
