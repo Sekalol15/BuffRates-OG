@@ -9,14 +9,12 @@ import org.bukkit.event.entity.CreatureSpawnEvent
 import kotlin.random.Random
 
 class Listeners : Listener {
-    //coming soon
-    //val getChance = Config.getSlimeChance()
     @EventHandler
     fun CreatureSpawnEvent(event: CreatureSpawnEvent) {
-
+        var getChance = Config.getSlimeChance()
         val slimePos = event.entity.location
         //check the conditions and spawn the slime if correct
-        if (event.entity.entitySpawnReason != CreatureSpawnEvent.SpawnReason.CUSTOM && Random.nextDouble() <= 0.2) {
+        if (event.entity.entitySpawnReason != CreatureSpawnEvent.SpawnReason.CUSTOM && Random.nextDouble() <= getChance) {
 
             event.entity.world.spawnEntity(slimePos, EntityType.SLIME, CreatureSpawnEvent.SpawnReason.CUSTOM)
 
