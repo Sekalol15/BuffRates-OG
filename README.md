@@ -1,6 +1,10 @@
 # BuffRates-OG
 
-Buffs various mob spawn and drop rates.
+Buffs following mob spawn and drop rates:
+
+-Slimes
+-Raiders
+-Zombie iron drops
 
 Gradle Version: 8.1.1
 
