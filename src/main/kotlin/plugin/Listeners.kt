@@ -19,6 +19,8 @@ class Listeners : Listener {
         val SlimeChanceEnabled = Config.getSlimeChanceEnabled()
         val SlimeChance = Config.getSlimeChance()
         val raiderQuantity = Config.getRaiderQuantity()
+        val WardenChance = Config.getWardenChance()
+        val WardenChanceEnabled = Config.getWardenChanceEnabled()
 
         val entityPos = event.entity.location
         val entityType = event.getEntityType()
@@ -28,6 +30,24 @@ class Listeners : Listener {
         if (event.entity.entitySpawnReason != CreatureSpawnEvent.SpawnReason.CUSTOM && Random.nextDouble() <= SlimeChance && SlimeChanceEnabled == true) {
 
             event.entity.world.spawnEntity(entityPos, EntityType.SLIME, CreatureSpawnEvent.SpawnReason.CUSTOM)
+        }
+
+        if (event.entity.entitySpawnReason == CreatureSpawnEvent.SpawnReason.RAID && raiderQuantity != 0) {
+
+
+            for(i in 1..raiderQuantity) {
+                event.entity.world.spawnEntity(entityPos, entityType, CreatureSpawnEvent.SpawnReason.CUSTOM)
+
+
+
+
+            }
+        }
+
+        //check the conditions and spawn the slime if correct
+        if (event.entity.entitySpawnReason != CreatureSpawnEvent.SpawnReason.CUSTOM && Random.nextDouble() <= WardenChance && WardenChanceEnabled == true) {
+
+            event.entity.world.spawnEntity(entityPos, EntityType.WARDEN, CreatureSpawnEvent.SpawnReason.CUSTOM)
         }
 
         if (event.entity.entitySpawnReason == CreatureSpawnEvent.SpawnReason.RAID && raiderQuantity != 0) {

@@ -15,3 +15,6 @@ raiderQuantity : 1
 
 zombieIronEnabled : true
 zombieIron : 0.1
+#chance to spawn a warden
+wardenChanceEnabled : true
+wardenChance : 0.001

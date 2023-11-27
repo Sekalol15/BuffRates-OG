@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/BuffRates-OG.main.iml" filepath="$PROJECT_DIR$/.idea/modules/BuffRates-OG.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.trueog.buffrates-og.BuffRates-OG.main.iml" filepath="$PROJECT_DIR$/.idea/modules/net.trueog.buffrates-og.BuffRates-OG.main.iml" />
     </modules>
   </component>
 </project>

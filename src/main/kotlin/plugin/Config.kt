@@ -43,4 +43,11 @@ object Config {
     fun getZombieIron(): Double {
         return config.get("zombieIron") as Double
     }
+
+    fun getWardenChanceEnabled() : Boolean {
+        return config.get("wardenChanceEnabled") as Boolean
+    }
+    fun getWardenChance(): Double {
+        return config.get("wardenChance") as Double
+    }
 }
