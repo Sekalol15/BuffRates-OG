@@ -10,7 +10,7 @@ plugins {
 group = 'net.trueog.buffrates-og' // Declare bundle identifier.
 version = '2.0'
 
-def apiVersion = "1.19.4" // Declare minecraft server target version.
+def apiVersion = "1.19" // Declare minecraft server target version.
 def targetJavaVersion = 17 // Declare java compatibility minimum.
 
 processResources {
